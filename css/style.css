@@ -10,7 +10,10 @@ label {
 .center{
   text-align: center;
 }
+
 .footer{
+  position: fixed;
+  padding-top: 5px;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -19,6 +22,9 @@ label {
   position: fixed;
   padding-top: 5px;
   width: 100%;
+}
+.settigs{
+    float:right;
 }
 .redBackground{
    background-color: #ff4d4d;
@@ -36,9 +42,13 @@ label {
 .textStyledHome{
    font-size: 22px;
    font-family: 'Lobster', cursive;
-   padding-bottom: 20px;
+   margin-bottom: 20px;
+   padding-bottom: 0px;
 }
-
+.noBorderButton{
+  border: none;
+  background: none;
+}
 
 .whiteBackground{
    background-color: white;
@@ -55,21 +65,50 @@ img#logo{
   width: 40px;
   height: 30px;
 }
+.flex{
+  display: inline-flex;
+}
+.headerTopSpace{
+  position:fixed; 
+  top:19px;
+}
+.nameSession{
+  left: 100px;
+}
+.settings{
+  position:fixed; 
+  right:20px; 
+}
+#map{
+  position: relative;
+  top: 71px;
+  z-index: 0;
+}
 @media only screen and (max-width: 600px) {
-   .spaceLeft{
-   padding: 0px 10px 0px 40px;
+  .spaceLeft{
+     padding: 0px 10px 0px 40px;
+  }
+  .spaceRight{
+    text-align: right;
+    padding: 0px 40px 0px 10px;
    }
-   .spaceRight{
-      text-align: right;
-      padding: 0px 40px 0px 10px;
-   }
-   .g{
+  .g{
       margin-top: 0px;
       margin-bottom: 5px;  
    }
-   img#logo{
-  width: 30px;
-  height: 20px;
+  img#logo{
+    width: 30px;
+    height: 20px;
+  }
+  .headerTopSpace{
+   top:3px;
+  }
+  .nameSession{
+  left: 84px;
+  }
+  #map{
+  position: relative;
+  top: 33px;
   }
 }
               /* button landing page*/
@@ -172,5 +211,4 @@ img#logo{
     line-height: 88px;
   }
 }
-
 

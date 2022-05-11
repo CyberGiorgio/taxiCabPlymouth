@@ -1,29 +1,28 @@
 <?php
-   include('session.php');
-   include('logicWelcome.php');
- ?>
+include('session.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
       <meta charset="utf-8">
+      <script src="js/js.js"></script> 
       <title>Welcome</title>
       <link rel="shortcut icon" href="#">
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'>
+      <link rel="stylesheet" href="css/loginStyle.css">
       <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/menu.css">
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
    </head>
+   
    <body>
-      ciaoo
-      <?php 
-         $usernameSession = $_SESSION['user'];        //session checker
-         $query = "SELECT email FROM customer WHERE email = '$usernameSession'";
-         $result = mysqli_stmt_get_result($query);
-         $result = mysqli_query($db, $query);
-         if(mysqli_num_rows($result) > 0){ 
-            while ($row = $result->fetch_assoc()) {
-            $email = ucfirst($row['email']);    //first letter uppercase
-            }
-            echo "<div id='welcome'>
-                     <p>Welcome $email </p>     
-                  </div>" ;   ?>
-      </div>      
+         <?php
+         include('headerLogged.php');
+         include('location.php');
+         include('footer.php');
+           ?>
    </body>
 </html>

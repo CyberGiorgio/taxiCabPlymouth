@@ -24,3 +24,34 @@ anime.timeline({loop: true})
 }
 
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+// When the user clicks the button, open the modal 
+function openModal(index) {
+  var modal = document.getElementById("myModal"+index);
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeModal(index) {
+  var modal = document.getElementById("myModal"+index);
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  var modal1 = document.getElementById("myModal1");
+  var modal2 = document.getElementById("myModal2");
+  var modal3 = document.getElementById("myModal3");
+  if (event.target == modal1 || event.target == modal2 || event.target == modal3) {
+   modal1.style.display = "none";
+   modal2.style.display = "none";
+   modal3.style.display = "none";
+  }
+}
