@@ -6,6 +6,7 @@ include('session.php');
 <html lang="en">
     <head>
       <meta charset="utf-8">
+      <script src="js/jsLogin.js"></script> 
       <script src="js/js.js"></script> 
       <title>Welcome</title>
       <link rel="shortcut icon" href="#">
@@ -21,6 +22,7 @@ include('session.php');
    <body>
          <?php
          include('headerLogged.php');
+         include('navigationBar.php');
          include('location.php');
          include('footer.php');
            ?>

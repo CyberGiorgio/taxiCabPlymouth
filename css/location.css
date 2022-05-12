@@ -1,0 +1,9 @@
+.destinationDiv{
+	position: relative;
+	top: 80px;
+}
+@media only screen and (max-width: 600px) {
+.destinationDiv{
+	top: 40px;
+	}
+}

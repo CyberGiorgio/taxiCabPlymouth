@@ -22,7 +22,6 @@
 <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 
 
-
    </head>
    
    <body bgcolor = "#FFFFFF" onload="sessionKiller()"> <!-- kill the session every time the page is loaded -->
@@ -50,7 +49,7 @@
                          <span class="spin"></span>
                   </div>
                  
-                   <div class="textError"><?php echo $errorLogin; ?></div>   <!-- error message -->
+                   <div class="textError"><?php echo $errorLogin; ?> <?php echo $errorRegister; ?></div>   <!-- error message -->
                   <div>
                      <div class="button login" >
                         <button align="center" type="submit" name="login" onclick ="sessionStored();" value="Log in"> Log in </button>
@@ -95,7 +94,7 @@
                      <input class="" type="checkbox" id="checkbox" name="checkbox" required="">
                      <label for="checkbox" class="labelLogin">accept terms and conditions</label>
                    </div>
-                 <div class="textError"><?php echo $errorRegister; ?></div>   <!-- error message -->
+                 <div class="textError"></div>   <!-- error message -->
                   <div>
                      <div class="button login" >
                         <button type="submit" name="register" value="Register">Register</button>  <!-- hide the other container -->

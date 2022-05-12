@@ -10,10 +10,13 @@ window.onload = function showPosition(position)  {
         var map = L.mapquest.map('map', {     //get coords map
           center: [latitude,  longitude],
           layers: L.mapquest.tileLayer('map'),
-          zoom: 14
+          zoom: 14, zoomControl: false
         });
+        let searchControl = L.mapquest.searchControl(
+      ).addTo(map);
+   
         L.mapquest.textMarker([latitude, longitude], {    //add marker map
-        text: 'Your position',
+        text: 'My position',
         subtext: '',
         position: 'right',
         type: 'marker',
@@ -23,8 +26,21 @@ window.onload = function showPosition(position)  {
           size: 'sm'
         }
       }).addTo(map);
+        L.mapquest.textMarker([latitude, longitude], {    //add marker map
+        text: 'nnnnnnnnn position',
+        subtext: '',
+        position: 'left',
+        type: 'marker',
+        icon: {
+          primaryColor: '#333333',
+          secondaryColor: '#333333',
+          size: 'sm'
+        }
+      }).addTo(map);
+
       map.addControl(L.mapquest.control());
     } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
+ console.log(placeSearch.getVal());
 }   

@@ -1,5 +1,6 @@
 function sessionKiller(){       //kill any previous sessions
     sessionStorage.removeItem('user');
+    sessionStorage.removeItem('customerId');
 }
 function sessionStored(){ //get a new session stored
     var input = document.getElementById('email');

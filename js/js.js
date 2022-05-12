@@ -26,10 +26,12 @@ anime.timeline({loop: true})
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
+  document.getElementByClass("sidenav").style.borderLeft = "black";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+  document.getElementByClass("sidenav").style.borderLeft = "white";
 }
 
 // When the user clicks the button, open the modal 
@@ -49,9 +51,11 @@ window.onclick = function(event) {
   var modal1 = document.getElementById("myModal1");
   var modal2 = document.getElementById("myModal2");
   var modal3 = document.getElementById("myModal3");
-  if (event.target == modal1 || event.target == modal2 || event.target == modal3) {
+  var modal4 = document.getElementById("myModal4");
+  if (event.target == modal1 || event.target == modal2 || event.target == modal3 || event.target == modal4) {
    modal1.style.display = "none";
    modal2.style.display = "none";
    modal3.style.display = "none";
+   modal4.style.display = "none";
   }
 }

@@ -8,11 +8,11 @@ include('session.php');
         </div>
         <div class="headerTopSpace textStyledHome nameSession ">
             <?php
-                $usernameSession = $_SESSION['user'];
+                $usernameSession = $_SESSION['customerId'];
 
                 // Echo session variables that were set on previous page
-                $query = "SELECT email, firstName FROM customer WHERE email = '$usernameSession'";
-                    $result = mysqli_stmt_get_result($query);
+                $query = "SELECT email, firstName FROM customer WHERE customerId = '$usernameSession'";
+                  
                     $result = mysqli_query($db, $query);
                     if(mysqli_num_rows($result) > 0){ 
                         while ($row = $result->fetch_assoc()) {
@@ -27,9 +27,7 @@ include('session.php');
         <button class="textStyledHome noBorderButton" onclick="openNav();">Settings</button>
     </div>
 </div>
- <?php
-include('navigationBar.php');
-?>
+
 
 
 
