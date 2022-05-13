@@ -75,13 +75,9 @@
       $result = mysqli_query($db,$sql);
       $stmt->close();
       $db->close();
-    
-
-      
 
        $errorRegister = "Your account is ready";
       }
    }
-    if(isset($_POST['register'])) { 
-    }
+  
 ?>

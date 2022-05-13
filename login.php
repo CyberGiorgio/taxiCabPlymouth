@@ -4,27 +4,32 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <script src="js/jsLogin.js"></script> 
-      <title>Login Page</title>
-      <link rel="shortcut icon" href="#">
-      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'>
-      <link rel="stylesheet" href="css/loginStyle.css">
-      <link rel="stylesheet" href="css/style.css">
-      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script async src="https://www.google.com/recaptcha/api.js">
-</script>
-
-    <link rel="preconnect" href="https://www.google.com">
-<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-
-
+      <head>
+         <meta charset="utf-8">
+         <script src="js/jsLogin.js"></script> 
+         <title>Login Page</title>
+         <link rel="shortcut icon" href="#">
+         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'>
+         <link rel="stylesheet" href="css/menu.css">
+         <link rel="stylesheet" href="css/loginStyle.css">
+         <link rel="stylesheet" href="css/style.css">
+         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <script async src="https://www.google.com/recaptcha/api.js"></script>
+         <link rel="preconnect" href="https://www.google.com">
+         <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+         <script type="text/javascript">     
+             function sessionKiller1(){       //kill any previous sessions
+            sessionStorage.removeItem('id');
+         }
+         function sessionKiller2(){       //kill any previous sessions
+           sessionStorage.removeItem('user');
+         }
+         </script>
    </head>
    
-   <body bgcolor = "#FFFFFF" onload="sessionKiller()"> <!-- kill the session every time the page is loaded -->
+   <body bgcolor = "#FFFFFF" onload="sessionKiller1(), sessionKiller2();"> <!-- kill the session every time the page is loaded -->
       <div class="header whiteBackground ">
          <div class="textStyledHome spaceLeft">
              <img id="logo" src="images/taxi.png" alt="logo">
@@ -97,8 +102,8 @@
                  <div class="textError"></div>   <!-- error message -->
                   <div>
                      <div class="button login" >
-                        <button type="submit" name="register" value="Register">Register</button>  <!-- hide the other container -->
-                     </div>
+                        <button type="submit" name="register" value="Register">Register</button> 
+                     </div> <!-- hide the other container -->
                      <div class="button login" >
                         <button type="button" onclick="hide('boxRegister'), show('boxLogin');"> Back to Log in </button>
                      </div>
@@ -110,10 +115,7 @@
          </div>
       </div><br>
    </div>
-      <div class="header whiteBackground footer">
-         <div class="textStyledHome spaceRight"> 
-            <p class="g">&copy; ginux Co.</p>     
-         </div>
-      </div>
+      <?php include('footer.php');
+      ?>
    </body>
 </html>

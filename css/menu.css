@@ -9,7 +9,7 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-  border-left: 1px solid white;
+  border-left: 1px solid black;
 }
 
 .sidenav button {
@@ -40,7 +40,9 @@
   .sidenav button {font-size: 18px;}
 }
 
-
+.hoverButton:hover{
+  font-weight: bold;
+}
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -94,4 +96,14 @@ a#textLogout{
 }
 input.formInput{
   width: 100%;
+}
+#deleteAccount{
+  position: absolute;
+  bottom: 20px;
+}
+button.deleteAccountColor:hover{
+  color: red;
+}
+button.deleteAccountPaddingButton{
+  padding: 0px 0px 10px 0px;
 }

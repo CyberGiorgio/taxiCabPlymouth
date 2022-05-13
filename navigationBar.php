@@ -9,7 +9,6 @@
    $holderName = mysqli_real_escape_string($db,$_POST['holderName']);
    $holderSurname = mysqli_real_escape_string($db,$_POST['holderSurname']);
    $address = mysqli_real_escape_string($db,$_POST['address']);
-   $emails = mysqli_real_escape_string($db,$_POST['email']);
    $number = mysqli_real_escape_string($db,$_POST['number']);
    $expireDate = date('Y-m-d', strtotime($_POST['expireDate'])); 
    $cvv = mysqli_real_escape_string($db,$_POST['cvv']);
@@ -23,13 +22,23 @@
    if(isset($_POST['updateAccount'])){
    $sql = "UPDATE customer SET firstName='$firstName', lastName='$lastName',  address='$address', birthDate='$birthDate', email='$email', password='$password' WHERE customerId='$usernameSession'";
    $result = mysqli_query($db,$sql);
+   
    }
 
   if(isset($_POST['updateCard'])){
    $sql = "UPDATE card SET holderName='$holderName', holderSurname='$holderSurname', number='$number', expireDate='$expireDate', cvv='$cvv' , credit='$credit' WHERE customerId='$usernameSession'";
    $result = mysqli_query($db,$sql);
    }
- 
+
+   if(isset($_POST['deleteAccount'])){
+   $sql = "DELETE FROM customer WHERE customerId='$usernameSession'" ;
+   $result = mysqli_query($db,$sql);
+   $sql = "DELETE FROM card WHERE customerId='$usernameSession'" ;
+   $result = mysqli_query($db,$sql);
+    header("Location: login.php");
+    die();
+
+   } 
 
 ?>
 <div id="mySidenav" class="sidenav">
@@ -272,7 +281,35 @@
                 </div>
             </div>
         </div>
+
+
+                                <!-- The Modal   logout -->
     <div>
-        <button class="noBorderButton "><a id="textLogout" href="login.php" onclick="sessionKiller();">Log out</a></button>
+        <button class="noBorderButton "><a id="textLogout" href="login.php" >Log out</a></button>
     </div>
+
+                                <!-- The Modal   Delete Account -->
+      <button id="deleteAccount" class="noBorderButton myBtn deleteAccountColor" onclick="openModal(6),closeNav()">Delete Account</button>
+        <div id="myModal6" class="modal">
+          <!-- Modal content -->
+            <div class="materialContainer">
+                <div class="box"  align="center" >
+                    <div class="title">
+                         <p>Delete Account</p>
+                         <span class="close"  onclick="closeModal(6);">&times;</span>
+                    </div>
+
+                    <div class="formContainer">
+                        <p>Are you sure you want to delete your account?</p>
+                    </div><br>
+                    <form method ="post">
+                    <div>
+                        <button class="noBorderButton myBtn deleteAccountColor deleteAccountPaddingButton" type="submit" name="deleteAccount" onclick="redirect();"> YES </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+
 </div>

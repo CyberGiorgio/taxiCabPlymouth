@@ -24,7 +24,7 @@ include('session.php');
             </div>
     </div>
     <div class="headerTopSpace textStyledHome settings ">
-        <button class="textStyledHome noBorderButton" onclick="openNav();">Settings</button>
+        <button class="textStyledHome hoverButton noBorderButton" onclick="openNav();">Settings</button>
     </div>
 </div>
 
