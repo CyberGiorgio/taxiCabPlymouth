@@ -6,7 +6,6 @@ include('session.php');
 <html lang="en">
     <head>
       <meta charset="utf-8">
-      <script src="js/jsLogin.js"></script> 
       <script src="js/jsWelcome.js"></script> 
       <title>Welcome</title>
       <link rel="shortcut icon" href="#">

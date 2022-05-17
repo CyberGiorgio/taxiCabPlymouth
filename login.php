@@ -6,7 +6,7 @@
 <html lang="en">
       <head>
          <meta charset="utf-8">
-         <script src="js/jsLogin.js"></script> 
+         <script type="javascript"src="js/jsLogin.js"></script> 
          <title>Login Page</title>
          <link rel="shortcut icon" href="#">
          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'>
@@ -20,16 +20,25 @@
          <link rel="preconnect" href="https://www.google.com">
          <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
          <script type="text/javascript">     
-             function sessionKiller1(){       //kill any previous sessions
+             function sessionKiller(){       //kill any previous sessions
             sessionStorage.removeItem('id');
+            sessionStorage.removeItem('user');
          }
-         function sessionKiller2(){       //kill any previous sessions
-           sessionStorage.removeItem('user');
+         function openModal(index) {
+           var modal = document.getElementById("myModal"+index);
+           modal.style.display = "block";
          }
+
+         // When the user clicks on <span> (x), close the modal
+         function closeModal(index) {
+           var modal = document.getElementById("myModal"+index);
+           modal.style.display = "none";
+         }
+
          </script>
    </head>
    
-   <body bgcolor = "#FFFFFF" onload="sessionKiller1(), sessionKiller2();"> <!-- kill the session every time the page is loaded -->
+   <body bgcolor = "#FFFFFF" onload="sessionKiller();"> <!-- kill the session every time the page is loaded -->
       <div class="header whiteBackground ">
          <div class="textStyledHome spaceLeft">
              <img id="logo" src="images/taxi.png" alt="logo">
