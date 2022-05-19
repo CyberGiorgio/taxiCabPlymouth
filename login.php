@@ -6,7 +6,7 @@
 <html lang="en">
       <head>
          <meta charset="utf-8">
-         <script type="javascript"src="js/jsLogin.js"></script> 
+         
          <title>Login Page</title>
          <link rel="shortcut icon" href="#">
          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'>
@@ -19,7 +19,9 @@
          <script async src="https://www.google.com/recaptcha/api.js"></script>
          <link rel="preconnect" href="https://www.google.com">
          <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+         <script type="text/javascript"src="js/jsLogin.js"></script> 
          <script type="text/javascript">     
+
              function sessionKiller(){       //kill any previous sessions
             sessionStorage.removeItem('id');
             sessionStorage.removeItem('user');
@@ -40,7 +42,7 @@
    
    <body bgcolor = "#FFFFFF" onload="sessionKiller();"> <!-- kill the session every time the page is loaded -->
       <div class="header whiteBackground ">
-         <div class="textStyledHome spaceLeft">
+         <div class="textStyledHome spaceLeft cursor">
              <img id="logo" src="images/taxi.png" alt="logo">
          </div>
       </div>

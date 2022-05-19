@@ -22,8 +22,11 @@
 }
 
 .sidenav button:hover {
-  color: black;
+  color: red;
   font-weight: bold;
+}
+a#textLogout:hover {
+    color: red;
 }
 
 .sidenav .closebtn {
@@ -42,6 +45,7 @@
 
 .hoverButton:hover{
   font-weight: bold;
+  color: red;
 }
 /* The Modal (background) */
 .modal {

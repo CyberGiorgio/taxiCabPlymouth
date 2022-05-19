@@ -4,7 +4,7 @@ include('session.php');
 <div class="header whiteBackground ">
     <div class="inline flex">
     	<div class="textStyledHome spaceLeft"> 
-            <img id="logo" src="images/taxi.png" alt="logo">
+           <a class = "cursor" onclick="location.reload()"><img id="logo" src="images/taxi.png" alt="logo"></a>
         </div>
         <div class="headerTopSpace textStyledHome nameSession ">
             <?php

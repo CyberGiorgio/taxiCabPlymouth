@@ -46,7 +46,7 @@
 
 
                                     <!-- The Modal   Account -->
-   <button  class="noBorderButton myBtn" onclick="openModal(1),closeNav()">Account</button>
+   <button  class="noBorderButton myBtn cursor" onclick="openModal(1),closeNav()">Account</button>
     <div id="myModal1" class="modal">
       <!-- Modal content -->
          <div class="materialContainer">
@@ -102,7 +102,7 @@
 
 
                                     <!-- The Modal   Credit Card -->
-    <button  class="noBorderButton myBtn"  onclick="openModal(2),closeNav()">Credit Card</button>
+    <button  class="noBorderButton myBtn cursor"  onclick="openModal(2),closeNav()">Credit Card</button>
     <div id="myModal2" class="modal">
       <div class="materialContainer">
             <div class="box"  align="center" >
@@ -157,7 +157,7 @@
         </div>
                                    <!-- The Modal   History -->
 
-        <button  class="noBorderButton myBtn" onclick="openModal(3),closeNav()">History</button>
+        <button  class="noBorderButton myBtn cursor" onclick="openModal(3),closeNav()">History</button>
         <div id="myModal3" class="modal">
       <!-- Modal content -->
             <div class="materialContainer">
@@ -221,7 +221,7 @@
 
 
                                   <!-- The Modal   Support -->
-      <button  class="noBorderButton myBtn" onclick="openModal(4),closeNav()">Support</button>
+      <button  class="noBorderButton myBtn cursor" onclick="openModal(4),closeNav()">Support</button>
         <div id="myModal4" class="modal">
           <!-- Modal content -->
             <div class="materialContainer">
@@ -285,11 +285,11 @@
 
                                 <!-- The Modal   logout -->
     <div>
-        <button class="noBorderButton "><a id="textLogout" href="login.php" >Log out</a></button>
+        <button class="noBorderButton red cursor"><a id="textLogout" href="login.php" >Log out</a></button>
     </div>
 
                                 <!-- The Modal   Delete Account -->
-      <button id="deleteAccount" class="noBorderButton myBtn deleteAccountColor" onclick="openModal(6),closeNav()">Delete Account</button>
+      <button id="deleteAccount" class="noBorderButton myBtn deleteAccountColor cursor" onclick="openModal(6),closeNav()">Delete Account</button>
         <div id="myModal6" class="modal">
           <!-- Modal content -->
             <div class="materialContainer">

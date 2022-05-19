@@ -1,7 +1,7 @@
   <div class="header whiteBackground footer spaceBetween">
    
                                      <!-- The Modal   Support -->
-      <button  class="noBorderButton  textStyledHome marginLeft hoverButton"
+      <button  class="noBorderButton  textStyledHome marginLeft hoverButton cursor"
         onclick="openModal(4),closeNav()"> <p id="supportButton"> Support</p>   </button>
 
         <div id="myModal4" class="modal">
@@ -64,7 +64,7 @@
             </div>
         </div>
                                            <!-- The Modal   Policies -->
-      <button  class="noBorderButton hoverButton textStyledHome"
+      <button  class="noBorderButton hoverButton textStyledHome cursor"
         onclick="openModal(7),closeNav()"> <p id="supportButton"> policies</p>   </button>
         <div id="myModal7" class="modal">
           <!-- Modal content -->

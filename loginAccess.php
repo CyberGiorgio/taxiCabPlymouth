@@ -15,18 +15,25 @@
    $credit = mysqli_real_escape_string($db,$_POST['credit']); 
    $number = mysqli_real_escape_string($db,$_POST['number']); 
    $cvv = mysqli_real_escape_string($db,$_POST['cvv']); 
+   $options = ['cost' => 10];
    
    if(isset($_POST['login'])) {        //check if credentials are correct
-
+      $sql = "SELECT password FROM `customer` WHERE email='$email'";  
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result, MYSQLI_NUM);    //catch the password
+      $hash =  $row[0]; 
+      $password = password_verify($password, $hash);     //match the password with database
+      if($password > 0){         //if password found value = 1 continue
       $stmt = $db->prepare("SELECT * FROM customer WHERE email=? AND password=? LIMIT 1");
-      $stmt->bind_param('ss', $email, $password);
+      $stmt->bind_param('ss', $email, $hash);      //prepare statement
       $stmt->execute();
-      $stmt->bind_result($email, $password);
+      $stmt->bind_result($email, $hash);
       $stmt->store_result();
+      
       if($stmt->num_rows > 0)  //To check if the row exists
          {
          $_SESSION["user"] = $email;
-          $sql = "SELECT customerId FROM `customer` WHERE email='$email'";  
+         $sql = "SELECT customerId FROM `customer` WHERE email='$email'";  
          $result = mysqli_query($db,$sql);
          $row = mysqli_fetch_array($result, MYSQLI_NUM);
          $customerId = $row[0];        //store session
@@ -40,16 +47,18 @@
             <?php
 
           exit();
+           $stmt->close();
+          $db->close();
+          }
          }
-      else {            //no user found
+      else {            //no user found or password not valid
          $errorLogin = "Your Login Name or Password is invalid";
-         }
-    $stmt->close();
-    $db->close();
+      }
    }
 
    if(isset($_POST['register'])) {           //if the account already exists
-     
+    
+     $password = password_hash($password,PASSWORD_BCRYPT ,$options); //ecrypted password cost 10
           //if the account does not exists yet
       $stmt = $db->prepare("SELECT * FROM customer WHERE firstName=? AND lastName=? AND email=? AND password=? AND birthDate=? AND address=? LIMIT 1");
       $stmt->bind_param('ssssss', $firstName, $lastName, $email, $password, $birthDate,  $address);
