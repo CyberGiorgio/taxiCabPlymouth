@@ -7,10 +7,10 @@ function sessionStored(){ //get a new session stored
     var input = document.getElementById('email');
     sessionStorage.setItem('user', input.value); 
 }
-function hide(id){
+function hide(id){          //show login/register
     document.getElementById(id).style.display = 'none';
 }
-function show(id){
+function show(id){          //hide login/register
     document.getElementById(id).style.display = 'block';
 }
 

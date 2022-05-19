@@ -19,23 +19,23 @@
    $toPlace = mysqli_real_escape_string($db,$_POST['toPlace']);
    $approved = mysqli_real_escape_string($db,$_POST['approved']);
 
-   if(isset($_POST['updateAccount'])){
+   if(isset($_POST['updateAccount'])){              //update account function
    $sql = "UPDATE customer SET firstName='$firstName', lastName='$lastName',  address='$address', birthDate='$birthDate', email='$email', password='$password' WHERE customerId='$usernameSession'";
    $result = mysqli_query($db,$sql);
    
    }
-
+                                                     //update card function
   if(isset($_POST['updateCard'])){
    $sql = "UPDATE card SET holderName='$holderName', holderSurname='$holderSurname', number='$number', expireDate='$expireDate', cvv='$cvv' , credit='$credit' WHERE customerId='$usernameSession'";
    $result = mysqli_query($db,$sql);
    }
-
+                                                     //delete account function
    if(isset($_POST['deleteAccount'])){
    $sql = "DELETE FROM customer WHERE customerId='$usernameSession'" ;
    $result = mysqli_query($db,$sql);
    $sql = "DELETE FROM card WHERE customerId='$usernameSession'" ;
    $result = mysqli_query($db,$sql);
-    header("Location: login.php");
+    header("Location: login.php");          //redirect to login page
     die();
 
    } 

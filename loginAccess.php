@@ -29,7 +29,7 @@
           $sql = "SELECT customerId FROM `customer` WHERE email='$email'";  
          $result = mysqli_query($db,$sql);
          $row = mysqli_fetch_array($result, MYSQLI_NUM);
-         $customerId = $row[0];
+         $customerId = $row[0];        //store session
          $_SESSION["customerId"] = $customerId;
        ?>
          <script>
@@ -41,7 +41,7 @@
 
           exit();
          }
-      else {
+      else {            //no user found
          $errorLogin = "Your Login Name or Password is invalid";
          }
     $stmt->close();

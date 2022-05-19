@@ -1,5 +1,5 @@
 <?php
-   include('config.php');
+   include('config.php');        //this file is storing the session
    session_start();
     $user_check = $_SESSION['email'];
 

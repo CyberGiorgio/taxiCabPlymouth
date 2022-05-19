@@ -1,13 +1,59 @@
-.destinationDiv{
+.containerDestination{
 	position: relative;
-	top: 80px;
+	top: 85px;
+	background-color: white;
+	width: 250px;
+	margin: auto;
+	border: 2px solid;
+	border-radius: 10px;
+	padding: 5px;
+}
+.textError{
+   font-size:11px; 
+   color:#cc0000; 
+   margin-bottom:20px;
+}
+.inline{
+	display: inline-flex;
+}
+.title:before{
+	left: -13px;
+}
+.box{
+	padding: 10px;
+}
+.button{
+	z-index: 0;
+}
+.button button {
+  width: 33%;
+  line-height: 13px;
+  left: 82px;
+
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  font-weight: 900;
+  font-size: 16px;
+  color: #ff4d4d;
+  margin-top: 0px;
+}
+.input, .button {
+    margin-top: 5px;
+    height: 21px;
+}
+.textError {
+    margin-bottom: 5px;
+}
+#bookingConfirmed{
+	left: 123px;
 }
 @media only screen and (max-width: 600px) {
-.destinationDiv{
+.containerDestination{
 	top: 40px;
 	}
+ .confirmButton button {
+  left: 56px;
+	}
+	.#bookingConfirmed{
+	left: 94pxpx;
 }
-.detailsDestination{
-	position: relative;
-	top: 300px;
 }

@@ -1,6 +1,5 @@
 <?php
-include('session.php');
-
+include('session.php');       //page for user logged
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,10 +1,9 @@
-function openNav() {
+function openNav() {        //open nav settings
   document.getElementById("mySidenav").style.width = "250px";
 }
-
+                            //close nav settings
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-
 }
 
 // When the user clicks the button, open the modal 
@@ -35,6 +34,6 @@ window.onclick = function(event) {
    modal4.style.display = "none";
    modal5.style.display = "none";
    modal6.style.display = "none";
-  modal7.style.display = "none";
+   modal7.style.display = "none";
   }
 }
